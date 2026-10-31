@@ -3,4 +3,5 @@ article.tex
 draft.md
 figures.md
 references.bib
-figures/
+figures/*.png
+.gitignore
