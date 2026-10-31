@@ -8,21 +8,18 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
-import _data as data
-import _style as style
+from ..config import FIGURE_DIR
+from . import _data as data
+from . import _style as style
 import matplotlib.pyplot as plt
 from matplotlib.cm import ScalarMappable
 from matplotlib.lines import Line2D
 from matplotlib.ticker import LogLocator, NullFormatter
 
-HERE = Path(__file__).resolve().parent
 QWEN = "Qwen2.5-32B"
 
 
@@ -699,7 +696,7 @@ def main() -> None:
     selected = list(BUILDERS) if args.figure == "all" else [args.figure]
     for key in selected:
         stem, builder = BUILDERS[key]
-        written = builder(HERE / stem)
+        written = builder(FIGURE_DIR / stem)
         for path in written:
             print(f"Wrote {path}")
 

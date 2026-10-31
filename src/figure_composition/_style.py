@@ -199,14 +199,12 @@ def add_legend(ax, handles, *, ncol: int, loc: str = "center",
     )
 
 
-def save(fig, output_stem: Path, *, png_dpi: int = 250) -> list[Path]:
+def save(fig, output_stem: Path) -> list[Path]:
     output_stem.parent.mkdir(parents=True, exist_ok=True)
     pdf_path = output_stem.with_suffix(".pdf")
-    png_path = output_stem.with_suffix(".png")
     fig.savefig(pdf_path, bbox_inches=None, facecolor="white")
-    fig.savefig(png_path, dpi=png_dpi, bbox_inches=None, facecolor="white")
     plt.close(fig)
-    return [pdf_path, png_path]
+    return [pdf_path]
 
 
 def symmetric_norm(values, minimum: float = 1e-6) -> Normalize:

@@ -1,0 +1,26 @@
+"""Constants for the synthetic-certification protocol."""
+
+PROTOCOL_ID = "synthetic-certification"
+SCHEMA_VERSION = 2
+PROMPT_VERSION = 2
+
+EXPERIMENT_MODE_HISTORICAL = "historical"
+EXPERIMENT_MODE_SYNTHETIC = "synthetic-certification"
+EXPERIMENT_MODES = (EXPERIMENT_MODE_HISTORICAL, EXPERIMENT_MODE_SYNTHETIC)
+
+SYNTHETIC_SCHEDULES = ("all-false", "all-true", "mixed", "mixed-40", "mixed-80")
+MIXED_FALSE_RATES = {"mixed": 0.40, "mixed-40": 0.40, "mixed-80": 0.80}
+DEFAULT_SYNTHETIC_SCHEDULE = "all-false"
+DEFAULT_SYNTHETIC_SEED = 7
+DEFAULT_SYNTHETIC_EPISODES = 10
+
+COMMUNICATION_ENABLED = "enabled"
+COMMUNICATION_DISABLED = "disabled"
+COMMUNICATION_CHOICES = (COMMUNICATION_ENABLED, COMMUNICATION_DISABLED)
+
+SYNTHETIC_PHASES = ("state", "communication", "verdict", "feedback", "reflection")
+
+PARTS_PER_GROUP = 3
+DEFAULT_SYNTHETIC_ROUNDS = 3
+LOSS_RATES = (0.10, 0.20)
+DEFAULT_LOSS_RATE = 0.10

@@ -14,9 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
-REPO = Path(__file__).resolve().parents[2]
-CNI = REPO / "collusion-net-influence"
-AC = REPO / "agent-collusion"
+from ..config import AC_ROOT as AC, CNI_ROOT as CNI
 
 RPS_CAMPAIGNS = {
     "Qwen2.5-32B": CNI / "results/llm_rps_v2/20261025-1834_same_model_qwen32b_big-v4",

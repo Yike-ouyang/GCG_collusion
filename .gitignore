@@ -1,7 +1,26 @@
-article.qmd
-article.tex
-draft.md
-figures.md
-references.bib
+# Secrets and local environment
+.env
+docs/
+.venv/
+__pycache__/
+*.pyc
+code/*/.venv/
+MPLCONFIGDIR/
+
+# Generated experiment results (code only is tracked)
+code/*/results/
+code/*/results_paper/data/
+code/*/analysis/results/
+code/*/logs/
+code/*/figures_to_keep
+code/collusion-net-influence/coalition_metrics/*/results/
+code/collusion-net-influence/coalition_metrics/*/*/results/
+
+# Generated intermediate figure outputs
+figures/panels/
 figures/*.png
-.gitignore
+
+# Generated article artifacts
+article.tex
+.quarto/
+code/collusion-net-influence/coalition_metrics/*/pilot_runs/
